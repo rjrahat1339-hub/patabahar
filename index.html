@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>পাতাবাহার — গাছের অনলাইন দোকান | সারা বাংলাদেশে ডেলিভারি</title>
+<meta name="description" content="পাতাবাহার — ইনডোর প্ল্যান্ট, ফুলের গাছ ও ফলের চারা। WhatsApp-এ অর্ডার করুন, সারা বাংলাদেশে ৩-৫ দিনে হোম ডেলিভারি।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f1e5;      /* warm linen */
+    --paper-2:#efe6d4;    /* deeper linen */
+    --card:#fffdf8;
+    --ink:#2e2a22;
+    --ink-soft:#6b6353;
+    --leaf:#33582f;       /* deep botanical green */
+    --leaf-soft:#e4ead9;
+    --terra:#b9552e;      /* terracotta */
+    --terra-deep:#9c4526;
+    --line:#ddd2bc;
+    --radius:14px;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font-family:'Hind Siliguri',-apple-system,'Segoe UI',sans-serif;line-height:1.65}
+  h1,h2,h3{font-family:'Tiro Bangla',Georgia,serif;font-weight:400;line-height:1.3}
+
+  /* ---------- header ---------- */
+  header{background:var(--leaf);color:#f4f1e6;padding:14px 20px;position:sticky;top:0;z-index:50;
+         display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{font-family:'Tiro Bangla',serif;font-size:1.6rem;letter-spacing:.5px}
+  .brand small{display:block;font-family:'Hind Siliguri',sans-serif;font-size:.72rem;opacity:.85;letter-spacing:.12em}
+  .wa-top{background:#25d366;color:#fff;text-decoration:none;padding:9px 16px;border-radius:999px;
+          font-weight:600;font-size:.95rem;white-space:nowrap}
+  .wa-top:hover{filter:brightness(1.06)}
+
+  /* ---------- hero ---------- */
+  .hero{background:linear-gradient(180deg,var(--paper-2),var(--paper));text-align:center;
+        padding:52px 20px 34px;border-bottom:1px solid var(--line)}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.2rem);margin:0;color:var(--leaf)}
+  .hero p.tag{font-size:1.15rem;color:var(--ink-soft);margin:10px 0 0}
+  .badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .badge{background:var(--card);border:1px solid var(--line);border-radius:999px;
+         padding:8px 18px;font-size:.92rem;color:var(--leaf);font-weight:600}
+  .badge.terra{color:var(--terra-deep)}
+
+  /* ---------- tabs ---------- */
+  .tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:26px 16px 4px}
+  .tab{border:1.5px solid var(--leaf);background:transparent;color:var(--leaf);border-radius:999px;
+       padding:8px 20px;font-size:1rem;font-family:inherit;font-weight:600;cursor:pointer}
+  .tab.active{background:var(--leaf);color:#f4f1e6}
+  .tab:hover:not(.active){background:var(--leaf-soft)}
+
+  /* ---------- grid ---------- */
+  .wrap{max-width:1120px;margin:0 auto;padding:22px 16px 10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+        overflow:hidden;display:flex;flex-direction:column;
+        box-shadow:0 2px 10px rgba(60,50,30,.06);transition:transform .15s}
+  .card:hover{transform:translateY(-3px)}
+  .ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--leaf-soft)}
+  .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;gap:6px}
+  .card h3{margin:0;font-size:1.25rem;color:var(--leaf)}
+  .card .en{font-size:.8rem;color:var(--ink-soft);letter-spacing:.04em;margin-top:-2px}
+  .card p.desc{margin:4px 0 0;font-size:.92rem;color:var(--ink-soft);flex:1}
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px;gap:8px}
+  .price{font-weight:700;font-size:1.25rem;color:var(--terra-deep)}
+  .wa-btn{background:var(--terra);color:#fff;text-decoration:none;border-radius:9px;
+          padding:8px 14px;font-weight:600;font-size:.92rem;white-space:nowrap}
+  .wa-btn:hover{background:var(--terra-deep)}
+  .soldout{display:inline-block;background:#eee3d3;color:#8a7a5f;border-radius:9px;
+           padding:8px 14px;font-weight:600;font-size:.92rem}
+
+  /* ---------- how to order / delivery ---------- */
+  section.info{max-width:1120px;margin:34px auto 0;padding:0 16px}
+  .info h2{color:var(--leaf);font-size:1.7rem;border-bottom:2px solid var(--line);padding-bottom:8px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .step .n{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--leaf);
+           color:#f4f1e6;align-items:center;justify-content:center;font-weight:700;margin-bottom:8px}
+  .delivery{background:var(--leaf);color:#f0eddc;border-radius:var(--radius);
+            padding:22px 24px;margin-top:30px;text-align:center;font-size:1.08rem}
+  .delivery b{color:#ffd9a0}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:44px;background:var(--paper-2);border-top:1px solid var(--line);
+         padding:30px 20px 26px;text-align:center;color:var(--ink-soft);font-size:.95rem}
+  footer .fbrand{font-family:'Tiro Bangla',serif;font-size:1.35rem;color:var(--leaf)}
+  footer a{color:var(--terra-deep)}
+  details.credits{max-width:680px;margin:16px auto 0;font-size:.78rem;text-align:left}
+  details.credits summary{cursor:pointer;text-align:center;color:var(--ink-soft)}
+  details.credits li{margin:2px 0}
+  @media (max-width:480px){ .hero{padding-top:38px} .tabs{gap:6px} .tab{padding:7px 14px;font-size:.92rem} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">পাতাবাহার <small>PATABAHAR · PLANTS</small></div>
+  <a class="wa-top" id="waTop" href="#">📱 WhatsApp অর্ডার</a>
+</header>
+
+<div class="hero">
+  <h1>পাতাবাহার</h1>
+  <p class="tag" id="tagline"></p>
+  <div class="badge-row">
+    <span class="badge">🚚 সারা বাংলাদেশে ডেলিভারি</span>
+    <span class="badge terra">⏱ মাত্র ৩–৫ দিনে</span>
+    <span class="badge">💬 WhatsApp-এ সহজ অর্ডার</span>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-cat="all">সব গাছ</button>
+  <button class="tab" data-cat="indoor">ইনডোর প্ল্যান্ট</button>
+  <button class="tab" data-cat="flower">ফুলের গাছ</button>
+  <button class="tab" data-cat="fruit">ফলের চারা</button>
+</nav>
+
+<main class="wrap"><div class="grid" id="grid"></div></main>
+
+<section class="info">
+  <h2>কীভাবে অর্ডার করবেন</h2>
+  <div class="steps">
+    <div class="step"><span class="n">১</span><br>পছন্দের গাছের <b>“অর্ডার করুন”</b> বাটনে চাপ দিন — WhatsApp খুলে যাবে, মেসেজ লেখা থাকবে আগে থেকেই।</div>
+    <div class="step"><span class="n">২</span><br>মেসেজ পাঠিয়ে আপনার <b>নাম ও ঠিকানা</b> লিখুন। আমরা দাম ও ডেলিভারি চার্জ নিশ্চিত করব।</div>
+    <div class="step"><span class="n">৩</span><br>৩–৫ দিনের মধ্যে গাছ পৌঁছে যাবে আপনার <b>দরজায়</b> — যত্নের নির্দেশনাসহ। 🌱</div>
+  </div>
+  <div class="delivery" id="deliveryNote"></div>
+</section>
+
+<footer>
+  <div class="fbrand">পাতাবাহার</div>
+  <div id="hoursNote"></div>
+  <div style="margin-top:6px">WhatsApp: <a id="waFoot" href="#">০১৮৫১-২৫৫৮৯৯</a></div>
+  <details class="credits">
+    <summary>ছবির কৃতজ্ঞতা (photo credits)</summary>
+    <ul>
+      <li>Money Plant — San906, CC0; Snake Plant — Mokkie, Public domain; ZZ Plant — Krzysztof Ziarnek (Kenraiz), CC BY-SA 4.0; Peace Lily — Biswarup Ganguly, CC BY 3.0; Monstera — Iva508, CC BY 4.0; Aloe Vera — Praneethpjv, CC BY-SA 4.0; Spider Plant — Nithyashree Balasupramaniyan, CC0; Rubber Plant — Maja Dumat, CC BY 2.0</li>
+      <li>Hibiscus — Jules Verne Times Two, CC BY-SA 4.0; Jasmine — PapiPijuan, CC BY-SA 4.0; Gardenia — Md Arif bd, CC BY-SA 4.0; Rose — NPS, Public domain; Ixora — Wilfredor, CC0; Marigold — George Chernilevsky, Public domain</li>
+      <li>Mango — Ainomugisha Brendah, CC BY-SA 4.0; Guava — Sarang, Public domain; Lemon — Nana Pearls, CC0; Lychee — B.navez, CC BY-SA 4.0; Malta — JanRehschuh, CC BY-SA 3.0; Papaya — Joydeep, CC BY-SA 3.0 — সবগুলো Wikimedia Commons থেকে।</li>
+    </ul>
+  </details>
+</footer>
+
+<script src="products.js"></script>
+<script>
+  const bnDigits = s => String(s).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+  const waLink = p => {
+    const msg = `আসসালামু আলাইকুম! পাতাবাহার থেকে আমি "${p.name_bn}" (৳${p.price}) অর্ডার করতে চাই।`;
+    return `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(msg)}`;
+  };
+  document.getElementById("tagline").textContent = SHOP.tagline_bn;
+  document.getElementById("deliveryNote").innerHTML = `🚚 <b>${SHOP.delivery_bn}</b>`;
+  document.getElementById("hoursNote").textContent = SHOP.hours_bn;
+  const waHome = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("আসসালামু আলাইকুম! পাতাবাহার থেকে গাছ অর্ডার করতে চাই।")}`;
+  document.getElementById("waTop").href = waHome;
+  document.getElementById("waFoot").href = waHome;
+
+  const grid = document.getElementById("grid");
+  function media(p){
+    if (p.video) return `<video class="ph" src="${p.video}" controls preload="metadata"></video>`;
+    return `<img class="ph" src="${p.img}" alt="${p.name_bn}" loading="lazy">`;
+  }
+  function render(cat){
+    grid.innerHTML = PRODUCTS
+      .filter(p => cat === "all" || p.cat === cat)
+      .map(p => `
+        <article class="card">
+          ${media(p)}
+          <div class="body">
+            <h3>${p.name_bn}</h3>
+            <div class="en">${p.name_en}</div>
+            <p class="desc">${p.desc_bn}</p>
+            <div class="price-row">
+              <span class="price">৳ ${bnDigits(p.price)}</span>
+              ${p.available
+                ? `<a class="wa-btn" href="${waLink(p)}" target="_blank" rel="noopener">অর্ডার করুন</a>`
+                : `<span class="soldout">স্টকে নেই</span>`}
+            </div>
+          </div>
+        </article>`).join("");
+  }
+  render("all");
+  document.getElementById("tabs").addEventListener("click", e => {
+    if (!e.target.classList.contains("tab")) return;
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    e.target.classList.add("active");
+    render(e.target.dataset.cat);
+  });
+</script>
+</body>
+</html>
