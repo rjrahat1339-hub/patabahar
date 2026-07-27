@@ -27,7 +27,7 @@ const SHOP = {
   // অ্যাকাউন্ট বানানোর পর এখানে শুধু username বসান — সাইটে বাটন
   // নিজে নিজেই চলে আসবে। ফাঁকা ("") রাখলে ওই বাটন দেখাবে না।
   social: {
-    facebook_page: "",    // যেমন: "patabahar.bd"  (facebook.com/ এর পরের অংশ)
+    facebook_page: "patabahar.bd",    // facebook.com/patabahar.bd
     instagram: "",        // যেমন: "patabahar_bd"  (@ ছাড়া)
     tiktok: "",           // যেমন: "patabahar_bd"  (@ ছাড়া)
     youtube: "",          // যেমন: "@patabahar"    (চ্যানেল হ্যান্ডেল)
