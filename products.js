@@ -119,4 +119,89 @@ const PRODUCTS = [
   { cat: "fruit", name_bn: "পেঁপে", name_en: "Papaya (Pepe)",
     price: 100, img: "img/pepe.jpg", video: "", available: true,
     desc_bn: "দ্রুত বাড়ে, ৬-৮ মাসেই ফল। সবজি ও পাকা ফল দুইভাবেই খাওয়া যায়।" },
+
+  // ============ নতুন যোগ হলো (২০টি) ============
+
+  // ---------- ইনডোর প্ল্যান্ট ----------
+  { cat: "indoor", name_bn: "এরিকা পাম", name_en: "Areca Palm",
+    price: 550, img: "img/areca-palm.jpg", video: "", available: true,
+    desc_bn: "ঘরের কোণা বা ড্রয়িংরুমের জন্য সবচেয়ে জনপ্রিয় পাম। বাতাস পরিষ্কার রাখে, দেখতে রাজকীয়।" },
+
+  { cat: "indoor", name_bn: "ক্রোটন (পাতাবাহার)", name_en: "Croton",
+    price: 250, img: "img/croton.jpg", video: "", available: true,
+    desc_bn: "লাল-হলুদ-সবুজ রঙিন পাতার গাছ — আমাদের দোকানের নামও এই গাছ থেকেই! রোদে রঙ আরও গাঢ় হয়।" },
+
+  { cat: "indoor", name_bn: "সিনগোনিয়াম", name_en: "Syngonium",
+    price: 220, img: "img/syngonium.jpg", video: "", available: true,
+    desc_bn: "তীরের ফলার মতো নরম পাতা। ছোট টবে বা ঝুলন্ত পটে দুইভাবেই সুন্দর, যত্ন খুব কম।" },
+
+  { cat: "indoor", name_bn: "লাকি বাম্বু", name_en: "Lucky Bamboo",
+    price: 300, img: "img/lucky-bamboo.jpg", video: "", available: true,
+    desc_bn: "শুধু পানিতেই বেঁচে থাকে। সৌভাগ্যের প্রতীক হিসেবে উপহার দেওয়ার জন্য দারুণ।" },
+
+  { cat: "indoor", name_bn: "ক্যাকটাস (মিক্স)", name_en: "Cactus (assorted)",
+    price: 180, img: "img/cactus.jpg", video: "", available: true,
+    desc_bn: "টেবিল বা জানালার পাশে ছোট্ট সাজ। মাসে দুই-তিনবার পানি দিলেই যথেষ্ট।" },
+
+  { cat: "indoor", name_bn: "সাকুলেন্ট (মিক্স)", name_en: "Succulent (assorted)",
+    price: 200, img: "img/succulent.jpg", video: "", available: true,
+    desc_bn: "গোলাপের মতো সাজানো মাংসল পাতা। পড়ার টেবিল বা অফিস ডেস্কের জন্য পারফেক্ট।" },
+
+  { cat: "indoor", name_bn: "এগ্লোনিমা", name_en: "Aglaonema (Chinese Evergreen)",
+    price: 480, img: "img/aglaonema.jpg", video: "", available: true,
+    desc_bn: "গোলাপি-সবুজ নকশা করা পাতা। কম আলোতেও রঙ ধরে রাখে — ঘরের ভিতরের গাছ হিসেবে সেরা।" },
+
+  { cat: "indoor", name_bn: "ফার্ন", name_en: "Boston Fern",
+    price: 260, img: "img/fern.jpg", video: "", available: true,
+    desc_bn: "ঝাঁকড়া সবুজ পাতার ঝর্ণা। বাথরুম বা বারান্দার ছায়ায় দারুণ জমে।" },
+
+  // ---------- ফুলের গাছ ----------
+  { cat: "flower", name_bn: "বাগানবিলাস", name_en: "Bougainvillea",
+    price: 300, img: "img/bougainvillea.jpg", video: "", available: true,
+    desc_bn: "ছাদ বা বারান্দা ফুলে ভরিয়ে দেয়। কড়া রোদ আর কম পানিতেই সবচেয়ে ভালো ফুল ফোটে।" },
+
+  { cat: "flower", name_bn: "এডেনিয়াম (মরু গোলাপ)", name_en: "Adenium (Desert Rose)",
+    price: 450, img: "img/adenium.jpg", video: "", available: true,
+    desc_bn: "মোটা গুঁড়ি আর গাঢ় গোলাপি ফুল — বনসাই-প্রেমীদের প্রিয়। পানি খুব কম লাগে।" },
+
+  { cat: "flower", name_bn: "কামিনী", name_en: "Kamini (Orange Jasmine)",
+    price: 260, img: "img/kamini.jpg", video: "", available: true,
+    desc_bn: "থোকা থোকা সাদা ফুলের তীব্র সুবাস, সন্ধ্যায় পুরো উঠান ভরে যায়। বেড়া হিসেবেও লাগানো যায়।" },
+
+  { cat: "flower", name_bn: "টগর", name_en: "Togor (Crape Jasmine)",
+    price: 190, img: "img/togor.jpg", video: "", available: true,
+    desc_bn: "দেশি সাদা ফুল, প্রায় সারা বছর ফোটে। পূজা-অর্চনা আর বাগান দুটোতেই চিরচেনা।" },
+
+  { cat: "flower", name_bn: "চন্দ্রমল্লিকা", name_en: "Chrysanthemum",
+    price: 150, img: "img/chandromollika.jpg", video: "", available: true,
+    desc_bn: "শীতের সবচেয়ে সুন্দর ফুলের একটি। নানা রঙে পাওয়া যায়, টবে দারুণ হয়।" },
+
+  { cat: "flower", name_bn: "রজনীগন্ধা", name_en: "Tuberose (Rojonigondha)",
+    price: 170, img: "img/rojonigondha.jpg", video: "", available: true,
+    desc_bn: "রাতে ছড়ানো মিষ্টি ঘ্রাণের জন্য বিখ্যাত। কন্দ থেকে সহজেই বাড়ে।" },
+
+  // ---------- ফলের চারা ----------
+  { cat: "fruit", name_bn: "ড্রাগন ফল", name_en: "Dragon Fruit",
+    price: 350, img: "img/dragon-fruit.jpg", video: "", available: true,
+    desc_bn: "এখন দেশে সবচেয়ে চাহিদার ফল। ছাদে খুঁটি দিয়ে সহজেই চাষ করা যায়, দামও ভালো।" },
+
+  { cat: "fruit", name_bn: "কুল/বরই (বাউকুল)", name_en: "Jujube — BAU Kul",
+    price: 280, img: "img/boroi.jpg", video: "", available: true,
+    desc_bn: "বড় মিষ্টি আপেল-কুল। কলমের চারা, অল্প দিনেই ফল ধরে।" },
+
+  { cat: "fruit", name_bn: "ডালিম/আনার", name_en: "Pomegranate (Dalim)",
+    price: 320, img: "img/dalim.jpg", video: "", available: true,
+    desc_bn: "টবেও ফল দেয় এমন জাত। পুষ্টিগুণে ভরা, দেখতেও সুন্দর।" },
+
+  { cat: "fruit", name_bn: "স্ট্রবেরি", name_en: "Strawberry",
+    price: 150, img: "img/strawberry.jpg", video: "", available: true,
+    desc_bn: "শীতকালের জন্য ছাদবাগানের মজার ফল। ঝুলন্ত টবে বাচ্চারাও লাগাতে ভালোবাসে।" },
+
+  { cat: "fruit", name_bn: "কামরাঙ্গা", name_en: "Star Fruit (Kamranga)",
+    price: 260, img: "img/kamranga.jpg", video: "", available: true,
+    desc_bn: "তারার মতো কাটা যায় — টক-মিষ্টি দেশি ফল। গাছ ছোট থাকে, উঠানে মানায়।" },
+
+  { cat: "fruit", name_bn: "সফেদা", name_en: "Sapodilla (Sofeda)",
+    price: 300, img: "img/sofeda.jpg", video: "", available: true,
+    desc_bn: "মধুর মতো মিষ্টি নরম ফল। কলমের চারা, যত্ন কম লাগে।" },
 ];
