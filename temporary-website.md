@@ -74,7 +74,11 @@ Chosen so the owner can edit everything in Notepad without developer help.
 - Buttons for **WhatsApp / Messenger / Instagram / TikTok** built into a
   "দাম, স্টক বা যত্ন নিয়ে প্রশ্ন?" section + footer icons.
 - **Auto-hide logic:** a button only appears once its username is filled in
-  `SHOP.social` in `products.js`. Prevents dead links. Currently **only WhatsApp shows.**
+  `SHOP.social` in `products.js`. Prevents dead links.
+- ✅ **Facebook page `patabahar.bd` LINKED** (2026-07-27) — Messenger + Facebook
+  buttons now live on the site. Instagram + TikTok still pending usernames.
+- Full copy-paste Facebook page content pack written: `ফেসবুক-পেজ-সেটআপ.txt`
+  (intro, about, page info, action button, 5 ready posts, first-week plan).
 
 ### Theme history (owner rejected 2, current is 3rd)
 1. ❌ Earthy/warm linen + serif — rejected
@@ -101,8 +105,11 @@ These cannot be done by Claude; they need the owner's phone/email/identity.
 3. **Create Facebook Page** — owner has no page. **Claude cannot create it**: requires
    the owner's Facebook login + phone verification + accepting Meta's terms as owner.
    No API/automation exists for this. Copy-paste setup text is ready in the social kit.
-4. **Create Instagram + TikTok** (owner said they have a personal FB/IG — need the
-   *business* usernames to link). Send usernames → buttons switch on in 1 minute.
+4. **Fill in the Facebook page content** — page exists (`patabahar.bd`) but must be
+   filled by the owner: profile pic, cover, intro, about, WhatsApp action button, first
+   posts. All text is pre-written in `ফেসবুক-পেজ-সেটআপ.txt` — copy-paste only.
+   (Claude cannot edit the FB page — no account access.)
+5. **Create Instagram + TikTok** — send usernames → buttons switch on in 1 minute.
 5. **Netlify move (clean address)** — to get rid of `rjrahat1339-hub` in the URL and have
    `patabahar.netlify.app` instead. Needs owner email signup + drag the
    `patabahar-website` folder. All prepared; 5 minutes of owner's time.
@@ -150,3 +157,5 @@ These cannot be done by Claude; they need the owner's phone/email/identity.
 | 2026-07-27 | Delivery charge changed to distance+size based, discussed on WhatsApp |
 | 2026-07-27 | 5 logo options generated (PNG + JPG) for owner to choose |
 | 2026-07-27 | **+20 plants added → 40 total**; photo credits regenerated for all 40 |
+| 2026-07-27 | `temporary-website.md` tracking file created |
+| 2026-07-27 | **Facebook page `patabahar.bd` linked** — Messenger + FB buttons live; FB page content pack written |
