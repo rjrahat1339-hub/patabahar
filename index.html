@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>পাতাবাহার — গাছের অনলাইন দোকান | সারা বাংলাদেশে ডেলিভারি</title>
+<meta name="description" content="পাতাবাহার — ইনডোর প্ল্যান্ট, ফুলের গাছ ও ফলের চারা। WhatsApp-এ অর্ডার করুন, সারা বাংলাদেশে ৩-৫ দিনে হোম ডেলিভারি।">
+<link rel="icon" type="image/png" href="img/logo-icon.png">
+<meta property="og:title" content="পাতাবাহার — গাছের অনলাইন দোকান">
+<meta property="og:description" content="ইনডোর প্ল্যান্ট, ফুলের গাছ ও ফলের চারা — সারা বাংলাদেশে ৩-৫ দিনে ডেলিভারি। WhatsApp-এ অর্ডার করুন।">
+<meta property="og:image" content="https://rjrahat1339-hub.github.io/patabahar/img/logo-square.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fffdf7; --ink:#243329; --ink-soft:#5f6f64; --ink-faint:#93a198;
+    --green:#16a34a; --green-deep:#128040; --green-soft:#e8f9ee;
+    --orange:#ff8a3d; --orange-deep:#f47516; --orange-soft:#fff1e6;
+    --pink:#ff5e8a; --pink-soft:#ffeaf1;
+    --sky:#38bdf8; --sky-soft:#e8f7fe;
+    --sun:#ffd028;
+    --line:#eee6d8;
+    --card-sh:0 2px 4px rgba(40,60,45,.06),0 10px 24px rgba(40,60,45,.08);
+    --r:18px;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:'Hind Siliguri',-apple-system,'Segoe UI',sans-serif;line-height:1.65}
+  h1,h2,h3,.logo-bn{font-family:'Baloo Da 2','Hind Siliguri',sans-serif}
+
+  /* ===== ticker bar ===== */
+  .topbar{background:var(--green-deep);color:#eafff2;font-size:.88rem;padding:8px 14px;text-align:center}
+  .topbar b{color:var(--sun)}
+
+  /* ===== header ===== */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60;
+         box-shadow:0 2px 10px rgba(40,60,45,.05)}
+  .hd{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo-bn{font-size:1.8rem;font-weight:800;line-height:1;
+           background:linear-gradient(90deg,var(--green) 0%,var(--orange) 100%);
+           -webkit-background-clip:text;background-clip:text;color:transparent}
+  .logo-sub{font-size:.66rem;letter-spacing:.24em;color:var(--ink-faint);font-weight:700}
+  .search{flex:1;min-width:190px;display:flex;background:var(--green-soft);border:2px solid transparent;
+          border-radius:999px;overflow:hidden;transition:border-color .15s}
+  .search:focus-within{border-color:var(--green)}
+  .search input{flex:1;border:0;background:transparent;padding:10px 18px;font-family:inherit;
+                font-size:.98rem;color:var(--ink);outline:none}
+  .search .ico{padding:10px 15px;color:var(--green-deep)}
+  .wa-cta{background:var(--green);color:#fff;text-decoration:none;padding:11px 20px;border-radius:999px;
+          font-weight:700;font-size:.95rem;white-space:nowrap;box-shadow:0 4px 12px rgba(22,163,74,.35)}
+  .wa-cta:hover{background:var(--green-deep)}
+
+  /* ===== category pills ===== */
+  .catnav{max-width:1180px;margin:0 auto;padding:14px 16px 0;display:flex;gap:10px;overflow-x:auto}
+  .cat{border:0;border-radius:999px;padding:9px 20px;font-family:inherit;font-size:.98rem;font-weight:700;
+       cursor:pointer;white-space:nowrap;background:#fff;border:2px solid var(--line);color:var(--ink-soft);
+       transition:all .15s}
+  .cat[data-cat="all"].active{background:var(--green);border-color:var(--green);color:#fff}
+  .cat[data-cat="indoor"].active{background:var(--sky);border-color:var(--sky);color:#fff}
+  .cat[data-cat="flower"].active{background:var(--pink);border-color:var(--pink);color:#fff}
+  .cat[data-cat="fruit"].active{background:var(--orange);border-color:var(--orange);color:#fff}
+  .cat:hover:not(.active){border-color:var(--green);color:var(--green-deep)}
+
+  /* ===== hero ===== */
+  .hero{max-width:1180px;margin:18px auto 0;padding:0 16px}
+  .hero .in{background:linear-gradient(115deg,#17b558 0%,#0ea84e 45%,#f6a028 100%);
+            border-radius:26px;color:#fff;padding:42px 34px;position:relative;overflow:hidden}
+  .hero .in::before{content:"🌿";position:absolute;font-size:11rem;opacity:.14;right:-18px;top:-30px;transform:rotate(18deg)}
+  .hero .in::after{content:"🪴";position:absolute;font-size:7rem;opacity:.15;left:2%;bottom:-24px;transform:rotate(-10deg)}
+  .hero h1{margin:0;font-size:clamp(1.7rem,4.4vw,2.7rem);font-weight:800;line-height:1.22;position:relative;z-index:2}
+  .hero h1 span{color:var(--sun)}
+  .hero p{margin:12px 0 0;font-size:1.06rem;max-width:54ch;color:#f2fff6;position:relative;z-index:2}
+  .cta-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+  .btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:999px;padding:12px 26px;font-size:1rem}
+  .btn.sun{background:var(--sun);color:#4b3a00;box-shadow:0 5px 16px rgba(0,0,0,.18)}
+  .btn.ghost{border:2.5px solid rgba(255,255,255,.75);color:#fff}
+  .btn:hover{transform:translateY(-1px)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:26px;position:relative;z-index:2}
+  .stat{background:rgba(255,255,255,.16);border-radius:16px;padding:12px 16px;text-align:center}
+  .stat .num{font-family:'Baloo Da 2';font-size:1.35rem;font-weight:800;color:var(--sun)}
+  .stat .lbl{font-size:.82rem;color:#eafff2}
+
+  /* ===== USP bubbles ===== */
+  .usp{max-width:1180px;margin:22px auto 0;padding:0 16px;display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .u{border-radius:var(--r);padding:16px 18px;display:flex;gap:12px;align-items:center;font-size:.95rem}
+  .u:nth-child(1){background:var(--green-soft)} .u:nth-child(2){background:var(--orange-soft)}
+  .u:nth-child(3){background:var(--sky-soft)}
+  .u .ic{font-size:1.7rem}
+  .u b{display:block}
+
+  /* ===== products ===== */
+  .wrap{max-width:1180px;margin:0 auto;padding:30px 16px 8px}
+  .sechead{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+  .sechead h2{margin:0;font-size:1.5rem;font-weight:800}
+  .sechead h2 .emoji{margin-right:6px}
+  select.sort{font-family:inherit;font-size:.92rem;padding:9px 14px;border:2px solid var(--line);
+              border-radius:999px;background:#fff;color:var(--ink-soft);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .card{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+        box-shadow:var(--card-sh);transition:transform .16s;position:relative;border:1px solid var(--line)}
+  .card:hover{transform:translateY(-5px) rotate(-.3deg)}
+  .ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--green-soft)}
+  .tagcat{position:absolute;top:10px;left:10px;font-size:.75rem;font-weight:800;border-radius:999px;
+          padding:4px 13px;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .tagcat.indoor{background:var(--sky)} .tagcat.flower{background:var(--pink)} .tagcat.fruit{background:var(--orange)}
+  .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;gap:4px}
+  .card h3{margin:0;font-size:1.18rem;font-weight:800}
+  .card .en{font-size:.78rem;color:var(--ink-faint);letter-spacing:.03em}
+  .card p.desc{margin:6px 0 0;font-size:.9rem;color:var(--ink-soft);flex:1}
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:8px}
+  .price{font-family:'Baloo Da 2';font-weight:800;font-size:1.35rem;color:var(--green-deep)}
+  .wa-btn{background:var(--green);color:#fff;text-decoration:none;border-radius:999px;padding:9px 18px;
+          font-weight:700;font-size:.92rem;white-space:nowrap;box-shadow:0 3px 10px rgba(22,163,74,.3)}
+  .wa-btn:hover{background:var(--green-deep)}
+  .soldout{display:inline-block;background:#f2efe8;color:#a09a8d;border-radius:999px;padding:9px 18px;font-weight:700;font-size:.92rem}
+  .noresult{color:var(--ink-soft);padding:30px 6px;font-size:1.02rem}
+
+  /* ===== ask / contact strip ===== */
+  .ask{max-width:1180px;margin:40px auto 0;padding:0 16px}
+  .ask .in{background:linear-gradient(115deg,var(--pink-soft),var(--sky-soft));border-radius:26px;
+           padding:32px 28px;text-align:center}
+  .ask h2{margin:0;font-size:1.5rem;font-weight:800}
+  .ask p{color:var(--ink-soft);margin:8px auto 0;max-width:60ch}
+  .chatrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .chat{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font-weight:700;
+        border-radius:999px;padding:11px 22px;font-size:.96rem;box-shadow:0 4px 14px rgba(0,0,0,.16)}
+  .chat.wa{background:#22c15e} .chat.fb{background:#1877f2} .chat.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
+  .chat.tt{background:#111} .chat.yt{background:#ff0000}
+  .chat:hover{transform:translateY(-2px)}
+  .chat-note{font-size:.85rem;color:var(--ink-faint);margin-top:14px}
+
+  /* ===== how to order ===== */
+  section.info{max-width:1180px;margin:40px auto 0;padding:0 16px}
+  .info h2{font-size:1.5rem;font-weight:800}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--card-sh)}
+  .step .n{display:inline-flex;width:38px;height:38px;border-radius:50%;color:#fff;font-weight:800;
+           align-items:center;justify-content:center;margin-bottom:10px;font-family:'Baloo Da 2'}
+  .step:nth-child(1) .n{background:var(--green)} .step:nth-child(2) .n{background:var(--orange)}
+  .step:nth-child(3) .n{background:var(--pink)}
+  .delivery{background:var(--green-soft);border-radius:var(--r);padding:20px 24px;margin-top:24px;
+            display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:1.02rem}
+  .delivery .ic{font-size:1.9rem}
+
+  /* ===== footer ===== */
+  footer{margin-top:50px;background:#173425;color:#bcd8c6}
+  .ft{max-width:1180px;margin:0 auto;padding:38px 16px 20px;display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+  .ft h4{color:#fff;font-size:1.05rem;margin:0 0 10px}
+  .ft .fbrand{font-family:'Baloo Da 2';font-size:1.5rem;font-weight:800;color:#7dffb0}
+  .ft a{color:#8fe6ae;text-decoration:none}
+  .ft li{margin:6px 0;list-style:none}
+  .ft ul{padding:0;margin:0}
+  .socialrow{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+  .socialrow a{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;
+               justify-content:center;font-size:1.15rem;color:#fff;text-decoration:none}
+  .ftbot{border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.82rem;
+         color:#7fa38d;padding:14px 16px 18px}
+  details.credits{max-width:760px;margin:8px auto 0;font-size:.74rem;text-align:left;color:#7fa38d}
+  details.credits summary{cursor:pointer;text-align:center}
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:80;background:#22c15e;color:#fff;
+            width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+            font-size:1.8rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+</style>
+</head>
+<body>
+
+<div class="topbar">🚚 <b>সারা বাংলাদেশে</b> ডেলিভারি — ৩ থেকে ৫ দিনে &nbsp;·&nbsp; 📞 WhatsApp: <b>০১৮৫১-২৫৫৮৯৯</b> &nbsp;·&nbsp; 🕘 সকাল ৯টা – রাত ১০টা</div>
+
+<header>
+  <div class="hd">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="img/logo-icon.svg" alt="পাতাবাহার লোগো" style="width:72px;height:72px">
+      <div><div class="logo-bn" style="font-size:2rem">পাতাবাহার</div><div class="logo-sub">PATABAHAR · PLANT SHOP</div></div>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="গাছ খুঁজুন — মনস্টেরা, জবা, আম…"><span class="ico">🔍</span></div>
+    <a class="wa-cta" id="waTop" href="#">📱 অর্ডার করুন</a>
+  </div>
+</header>
+
+<nav class="catnav" id="tabs">
+  <button class="cat active" data-cat="all">🌿 সব গাছ <span id="c-all"></span></button>
+  <button class="cat" data-cat="indoor">🪴 ইনডোর <span id="c-indoor"></span></button>
+  <button class="cat" data-cat="flower">🌸 ফুল <span id="c-flower"></span></button>
+  <button class="cat" data-cat="fruit">🍋 ফল <span id="c-fruit"></span></button>
+</nav>
+
+<section class="hero"><div class="in">
+  <h1>ঘর সাজান সবুজে —<br>গাছ পৌঁছে যাবে <span>আপনার দরজায়</span> 🌱</h1>
+  <p>ইনডোর প্ল্যান্ট, ফুলের গাছ আর ফলের চারা — বাছাই করা সুস্থ গাছ। WhatsApp-এ এক মেসেজেই অর্ডার, ঢাকা থেকে টেকনাফ সব ঠিকানায়।</p>
+  <div class="cta-row">
+    <a class="btn sun" href="#plants">গাছ দেখুন 👇</a>
+    <a class="btn ghost" id="waHero" href="#">💬 মেসেজ করুন</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num" id="statCount">—</div><div class="lbl">জাতের গাছ</div></div>
+    <div class="stat"><div class="num">৬৪ জেলা</div><div class="lbl">ডেলিভারি</div></div>
+    <div class="stat"><div class="num">৩–৫ দিন</div><div class="lbl">পৌঁছে যায়</div></div>
+    <div class="stat"><div class="num">১ মেসেজ</div><div class="lbl">অর্ডার সম্পূর্ণ</div></div>
+  </div>
+</div></section>
+
+<div class="usp">
+  <div class="u"><span class="ic">🌱</span><span><b>বাছাই করা সুস্থ গাছ</b>প্রতিটি গাছ যাচাই করে পাঠানো হয়</span></div>
+  <div class="u"><span class="ic">📦</span><span><b>যত্নে প্যাকিং</b>পথে যেন না ভাঙে সেভাবে মোড়ানো</span></div>
+  <div class="u"><span class="ic">💬</span><span><b>কেনার পরেও পরামর্শ</b>যত্নের প্রশ্নে WhatsApp-এ উত্তর</span></div>
+</div>
+
+<main class="wrap" id="plants">
+  <div class="sechead">
+    <h2 id="secTitle"><span class="emoji">🌿</span>সব গাছ</h2>
+    <select class="sort" id="sort">
+      <option value="default">সাজানো: স্বাভাবিক</option>
+      <option value="low">দাম: কম → বেশি</option>
+      <option value="high">দাম: বেশি → কম</option>
+    </select>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="noresult" id="noresult" style="display:none">😕 এই নামে গাছ পাওয়া যায়নি — অন্য বানানে খুঁজুন, বা মেসেজে জিজ্ঞেস করুন।</div>
+</main>
+
+<section class="ask" id="ask"><div class="in">
+  <h2>💬 দাম, স্টক বা যত্ন নিয়ে প্রশ্ন?</h2>
+  <p>যেখানে সুবিধা সেখানেই মেসেজ করুন — WhatsApp, Messenger, Instagram বা TikTok। ছবি পাঠিয়ে জিজ্ঞেস করুন “এই গাছটা আছে?” — আমরা উত্তর দেব।</p>
+  <div class="chatrow" id="chatrow"></div>
+  <div class="chat-note" id="chatnote"></div>
+</div></section>
+
+<section class="info">
+  <h2>কীভাবে অর্ডার করবেন</h2>
+  <div class="steps">
+    <div class="step"><span class="n">১</span><br>পছন্দের গাছের <b>“অর্ডার করুন”</b> বাটনে চাপ দিন — WhatsApp খুলে যাবে, মেসেজ লেখা থাকবে।</div>
+    <div class="step"><span class="n">২</span><br>আপনার <b>নাম, ঠিকানা ও মোবাইল নম্বর</b> লিখে পাঠান — দূরত্ব ও গাছের আকার অনুযায়ী ডেলিভারি চার্জ আলোচনা করে ঠিক করব।</div>
+    <div class="step"><span class="n">৩</span><br>৩–৫ দিনে গাছ পৌঁছাবে <b>আপনার দরজায়</b> — সাথে যত্নের নির্দেশনা 🌱</div>
+  </div>
+  <div class="delivery"><span class="ic">🚚</span><span><b id="deliveryNote"></b><br>📏 ডেলিভারি চার্জ <b>দূরত্ব ও গাছের আকারের</b> ওপর নির্ভর করে — তাই এটা নির্দিষ্ট নয়। অর্ডারের সময় WhatsApp-এ আলোচনা করে চার্জ ঠিক করা হয়।</span></div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fbrand">পাতাবাহার</div>
+      <p style="margin:8px 0 0;font-size:.92rem">সবুজে সাজুক আপনার ঘর। বাছাই করা ইনডোর প্ল্যান্ট, ফুলের গাছ ও ফলের চারা — সারা বাংলাদেশে ডেলিভারি।</p>
+      <div class="socialrow" id="socialFoot"></div>
+    </div>
+    <div>
+      <h4>যোগাযোগ</h4>
+      <ul>
+        <li>📞 WhatsApp: <a id="waFoot" href="#">০১৮৫১-২৫৫৮৯৯</a></li>
+        <li>🕘 <span id="hoursNote"></span></li>
+        <li>🚚 সারা বাংলাদেশে কুরিয়ারে ডেলিভারি</li>
+      </ul>
+    </div>
+    <div>
+      <h4>ক্যাটাগরি</h4>
+      <ul>
+        <li><a href="#plants" data-jump="indoor">🪴 ইনডোর প্ল্যান্ট</a></li>
+        <li><a href="#plants" data-jump="flower">🌸 ফুলের গাছ</a></li>
+        <li><a href="#plants" data-jump="fruit">🍋 ফলের চারা</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    © পাতাবাহার — সর্বস্বত্ব সংরক্ষিত
+    <details class="credits">
+      <summary>ছবির কৃতজ্ঞতা (photo credits)</summary>
+      <ul><li>Adenium — This Photo was taken by Timothy A. Gonsalves. Feel free, CC BY-SA 4.0; Aglaonema — Mokkie, CC BY-SA 4.0; Aloe Vera — Praneethpjv, CC BY-SA 4.0; Areca Palm — Prabhupuducherry, CC BY-SA 4.0; Bougainvillea — Vitaium, CC BY-SA 4.0; Cactus — PattayaPatrol, CC BY-SA 4.0; Chrysanthemum — Ermell, CC BY-SA 4.0; Croton — Dinesh Valke from Thane, India, CC BY-SA 2.0; Dragon Fruit — Bff, CC BY-SA 4.0; Fern — Willow Coville, CC BY-SA 4.0; Gardenia — Md Arif bd, CC BY-SA 4.0; Guava — Sarang, Public domain; Hibiscus — Jules Verne Times Two, CC BY-SA 4.0; Ixora — Wilfredor, CC0; Jasmine — PapiPijuan, CC BY-SA 4.0; Jujube — Augustus Binu : flickr, CC BY-SA 3.0; Kamini — Quangkhanhhuynh, CC BY-SA 4.0; Lemon — Nana Pearls, CC0; Lucky Bamboo — Just some student on the web, CC BY-SA 4.0; Lychee — B.navez, CC BY-SA 4.0; Malta — JanRehschuh, CC BY-SA 3.0; Mango — Ainomugisha Brendah, CC BY-SA 4.0; Marigold — George Chernilevsky, Public domain; Money Plant — San906, CC0; Monstera — Iva508, CC BY 4.0; Papaya — Joydeep, CC BY-SA 3.0; Peace Lily — Biswarup Ganguly, CC BY 3.0; Pomegranate — Ivar Leidus, CC BY-SA 4.0; Rose — NPS photo, Public domain; Rubber Plant — Maja Dumat, CC BY 2.0; Sapodilla — Manhdeptraipro2114, CC BY-SA 4.0; Snake Plant — Mokkie, Public domain; Spider Plant — Nithyashree Balasupramaniyan, CC0; Star Fruit — SMasters, CC BY-SA 3.0; Strawberry — Ivar Leidus, CC BY-SA 4.0; Succulent — brewbooks from near Seattle, USA, CC BY-SA 2.0; Syngonium — Stephanie cheks, CC BY-SA 4.0; Togor — Brihaspati, CC BY 4.0; Tuberose — Joydeep, CC BY-SA 3.0; ZZ Plant — Krzysztof Ziarnek, Kenraiz, CC BY-SA 4.0 — সবগুলো Wikimedia Commons থেকে (CC/Public domain)।</li></ul>
+    </details>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" aria-label="WhatsApp">💬</a>
+
+<script src="products.js"></script>
+<script>
+  const bnDigits = s => String(s).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+  const CATNAME = {all:"সব গাছ", indoor:"ইনডোর প্ল্যান্ট", flower:"ফুলের গাছ", fruit:"ফলের চারা"};
+  const CATEMOJI = {all:"🌿", indoor:"🪴", flower:"🌸", fruit:"🍋"};
+  const waLink = p => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(
+    `আসসালামু আলাইকুম! পাতাবাহার থেকে আমি "${p.name_bn}" (৳${p.price}) অর্ডার করতে চাই।`)}`;
+  const waHome = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("আসসালামু আলাইকুম! পাতাবাহার থেকে গাছ অর্ডার করতে চাই।")}`;
+  for (const id of ["waTop","waHero","waFoot","waFloat"]) document.getElementById(id).href = waHome;
+  document.getElementById("deliveryNote").textContent = SHOP.delivery_bn;
+  document.getElementById("hoursNote").textContent = SHOP.hours_bn;
+  document.getElementById("statCount").textContent = bnDigits(PRODUCTS.length) + "+";
+  for (const c of ["all","indoor","flower","fruit"]) {
+    const n = c === "all" ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === c).length;
+    document.getElementById("c-" + c).textContent = "(" + bnDigits(n) + ")";
+  }
+
+  /* ---- social/chat buttons: render only what exists ---- */
+  const S = SHOP.social || {};
+  const toFacebookUrl = value => {
+    if (!value) return "";
+    const trimmed = String(value).trim();
+    return /^https?:\/\//i.test(trimmed)
+      ? trimmed
+      : `https://facebook.com/${trimmed.replace(/^\/+|\/+$/g, "")}`;
+  };
+  const toMessengerUrl = value => {
+    if (!value) return "";
+    const trimmed = String(value).trim();
+    return /^https?:\/\//i.test(trimmed)
+      ? trimmed
+      : `https://m.me/${trimmed.replace(/^\/+|\/+$/g, "")}`;
+  };
+  const chats = [
+    {on: true,                 cls:"wa", ic:"📱", label:"WhatsApp",  url: waHome},
+    {on: !!S.facebook_page,    cls:"fb", ic:"💬", label:"Messenger", url: toMessengerUrl(S.facebook_page)},
+    {on: !!S.instagram,        cls:"ig", ic:"📸", label:"Instagram", url: `https://instagram.com/${S.instagram}`},
+    {on: !!S.tiktok,           cls:"tt", ic:"🎵", label:"TikTok",    url: `https://tiktok.com/@${S.tiktok}`},
+    {on: !!S.youtube,          cls:"yt", ic:"▶️", label:"YouTube",   url: `https://youtube.com/${S.youtube}`},
+  ];
+  document.getElementById("chatrow").innerHTML = chats.filter(c => c.on)
+    .map(c => `<a class="chat ${c.cls}" href="${c.url}" target="_blank" rel="noopener">${c.ic} ${c.label}</a>`).join("");
+  const socials = [
+    {on: !!S.facebook_page, ic:"👍", bg:"#1877f2", url: toFacebookUrl(S.facebook_page), t:"Facebook"},
+    {on: !!S.instagram,     ic:"📸", bg:"linear-gradient(45deg,#f58529,#dd2a7b,#8134af)", url:`https://instagram.com/${S.instagram}`, t:"Instagram"},
+    {on: !!S.tiktok,        ic:"🎵", bg:"#111", url:`https://tiktok.com/@${S.tiktok}`, t:"TikTok"},
+    {on: !!S.youtube,       ic:"▶️", bg:"#ff0000", url:`https://youtube.com/${S.youtube}`, t:"YouTube"},
+    {on: true,              ic:"📱", bg:"#22c15e", url: waHome, t:"WhatsApp"},
+  ];
+  document.getElementById("socialFoot").innerHTML = socials.filter(s => s.on)
+    .map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.t}" style="background:${s.bg}">${s.ic}</a>`).join("");
+  const missing = ["facebook_page","instagram","tiktok"].filter(k => !S[k]).length;
+  document.getElementById("chatnote").textContent = missing
+    ? "ফেসবুক পেজ, Instagram ও TikTok খুব শিগগিরই আসছে — আপাতত WhatsApp-এ মেসেজ করুন!"
+    : "";
+
+  /* ---- catalog ---- */
+  const grid = document.getElementById("grid");
+  let CAT = "all", QUERY = "", SORT = "default";
+  const media = p => p.video
+    ? `<video class="ph" src="${p.video}" controls preload="metadata"></video>`
+    : `<img class="ph" src="${p.img}" alt="${p.name_bn}" loading="lazy">`;
+  function render(){
+    let list = PRODUCTS.filter(p => CAT === "all" || p.cat === CAT);
+    if (QUERY) {
+      const q = QUERY.toLowerCase();
+      list = list.filter(p => (p.name_bn + " " + p.name_en + " " + p.desc_bn).toLowerCase().includes(q));
+    }
+    if (SORT === "low")  list = [...list].sort((a,b) => a.price - b.price);
+    if (SORT === "high") list = [...list].sort((a,b) => b.price - a.price);
+    document.getElementById("secTitle").innerHTML =
+      `<span class="emoji">${CATEMOJI[CAT]}</span>${CATNAME[CAT]}${QUERY ? ` — “${QUERY}”` : ""}`;
+    document.getElementById("noresult").style.display = list.length ? "none" : "block";
+    grid.innerHTML = list.map(p => `
+      <article class="card">
+        <span class="tagcat ${p.cat}">${CATNAME[p.cat]}</span>
+        ${media(p)}
+        <div class="body">
+          <h3>${p.name_bn}</h3>
+          <div class="en">${p.name_en}</div>
+          <p class="desc">${p.desc_bn}</p>
+          <div class="price-row">
+            <span class="price">৳ ${bnDigits(p.price)}</span>
+            ${p.available
+              ? `<a class="wa-btn" href="${waLink(p)}" target="_blank" rel="noopener">অর্ডার করুন</a>`
+              : `<span class="soldout">স্টকে নেই</span>`}
+          </div>
+        </div>
+      </article>`).join("");
+  }
+  render();
+  document.getElementById("tabs").addEventListener("click", e => {
+    const b = e.target.closest(".cat"); if (!b) return;
+    document.querySelectorAll(".cat").forEach(t => t.classList.remove("active"));
+    b.classList.add("active"); CAT = b.dataset.cat; render();
+  });
+  document.getElementById("q").addEventListener("input", e => { QUERY = e.target.value.trim(); render(); });
+  document.getElementById("sort").addEventListener("change", e => { SORT = e.target.value; render(); });
+  document.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", () => {
+    const c = a.dataset.jump;
+    document.querySelectorAll(".cat").forEach(t => t.classList.toggle("active", t.dataset.cat === c));
+    CAT = c; render();
+  }));
+</script>
+</body>
+</html>

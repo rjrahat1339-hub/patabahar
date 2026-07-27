@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="220" viewBox="0 0 640 220" role="img" aria-label="পাতাবাহার লোগো">
+  <rect x="10" y="14" width="182" height="182" rx="48" fill="#f8fff9"/>
+  <circle cx="101" cy="105" r="76" fill="#16a34a"/>
+  <path d="M58 108c0-35 27-62 61-62 21 0 39 10 50 27-7-19-21-32-40-36 10-4 22-5 33-1 18 6 31 20 35 39 4 16 1 33-9 47-11 15-29 25-48 25-17 0-34-6-47-18 12 17 31 28 51 28 20 0 39-9 52-24-9 24-32 40-58 40-32 0-57-24-57-56 0-8 1-16 4-24-7 8-10 18-10 28z" fill="#ffffff"/>
+  <path d="M110 54c9-3 18-1 25 5-9 0-18 4-25 11-5-7-6-13 0-16z" fill="#ffd028"/>
+  <circle cx="147" cy="64" r="10" fill="#ff8a3d"/>
+  <circle cx="82" cy="78" r="7" fill="#ffd028"/>
+  <text x="226" y="92" font-family="Noto Sans Bengali, SolaimanLipi, Arial, sans-serif" font-size="58" font-weight="700" fill="#1f3a2b">পাতাবাহার</text>
+  <text x="226" y="132" font-family="Noto Sans Bengali, SolaimanLipi, Arial, sans-serif" font-size="24" font-weight="600" fill="#5d6d62">গাছের অনলাইন দোকান</text>
+  <rect x="226" y="150" width="192" height="8" rx="4" fill="#16a34a"/>
+</svg>
